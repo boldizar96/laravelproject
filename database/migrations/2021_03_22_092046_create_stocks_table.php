@@ -15,11 +15,11 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->string('sparePart_id');
+            $table->unsignedBigInteger('sparePart_id');
             $table->foreign('sparePart_id')
                 ->references('id')
                 ->on('spare_parts')->onDelete('cascade');
-            
+
             $table->integer("stockAmount");
             $table->string("location");
             $table->timestamps();

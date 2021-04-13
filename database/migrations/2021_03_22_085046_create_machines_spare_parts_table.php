@@ -15,12 +15,12 @@ class CreateMachinesSparePartsTable extends Migration
     {
         Schema::create('machines_spare_parts', function (Blueprint $table) {
             $table->id();
-            $table->string('machine_id');
+            $table->unsignedBigInteger('machine_id');
             $table->foreign('machine_id')
-              ->references('id')
-              ->on('machines')->onDelete('cascade');
-            
-            $table->string('sparePart_id');
+                ->references('id')
+                ->on('machines')->onDelete('cascade');
+
+            $table->unsignedBigInteger('sparePart_id');
             $table->foreign('sparePart_id')
                 ->references('id')
                 ->on('spare_parts')->onDelete('cascade');
