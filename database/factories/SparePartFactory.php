@@ -21,8 +21,12 @@ class SparePartFactory extends Factory
      */
     public function definition()
     {
+        $types = ['arm', 'wrist', 'body'];
+        $statuses=['assembled','waiting_for_assembly','assembly_in_progress'];
         return [
-            'name' => $this->faker->userName,
+            'name' => $this->faker->userName ,
+            'type' => $types[rand(0,2)],
+            'status' => $statuses[rand(0,2)]
         ];
     }
 }
