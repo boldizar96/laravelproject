@@ -13,4 +13,9 @@ class SparePart extends Model
     {
         return $this->belongsToMany(Machine::class);
     }
+
+    public function Stock()
+    {
+        return $this->belongsTo(Stock::class);
+    }
 }
