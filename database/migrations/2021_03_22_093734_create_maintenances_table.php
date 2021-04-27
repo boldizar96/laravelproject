@@ -19,7 +19,7 @@ class CreateMaintenancesTable extends Migration
             $table->foreign('machine_id')
               ->references('id')
               ->on('machines')->onDelete('cascade');
-            
+
             $table->unsignedBigInteger('sparePart_id');
             $table->foreign('sparePart_id')
                 ->references('id')
@@ -29,7 +29,7 @@ class CreateMaintenancesTable extends Migration
                 ->references('id')
                 ->on('users')->onDelete('cascade');
             $table->date('repair_date');
-            $table->time('duration');
+            $table->unsignedBigInteger('duration(mins)');
             $table->timestamps();
         });
     }

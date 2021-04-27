@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\SparePart;
 use App\Models\Stock;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,6 +23,7 @@ class StockFactory extends Factory
     public function definition()
     {
         return [
+            'sparePart_id'=> SparePart::factory(),
             'stockAmount'=>$this->faker->randomNumber(),
             'location'=>$this->faker->slug(),
         ];

@@ -16,6 +16,8 @@ class CreateSparePartsTable extends Migration
         Schema::create('spare_parts', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->string("type");
+            $table->string("status");
             $table->timestamps();
         });
     }

@@ -25,9 +25,9 @@ class MachineFactory extends Factory
         $types = ['milling', 'welding', 'CNC'];
         $statuses=['operating','shut_down','waiting_for_repair'];
         return [
-            'name' => $this->faker->userName ,
             'type' => $types[rand(0,2)],
-            'status' => $statuses[rand(0,2)]
+            'status' => $statuses[rand(0,2)],
+
         ];
     }
 }
